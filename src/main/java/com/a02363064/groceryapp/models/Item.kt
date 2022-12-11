@@ -6,8 +6,9 @@ import androidx.room.PrimaryKey
 
 @Entity
 data class Item(
-        @PrimaryKey val name: String,
-        @ColumnInfo val location: String,
-        @ColumnInfo val cost: String,
-        @ColumnInfo val onList: String
+        @PrimaryKey(autoGenerate = true) var id: Long,
+        @ColumnInfo var name: String,
+        @ColumnInfo var location: String,
+        @ColumnInfo var cost: String,
+        @ColumnInfo var onList: Boolean
 )

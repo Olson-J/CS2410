@@ -4,9 +4,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.a02363064.groceryapp.databinding.MyListListItemBinding
+import com.a02363064.groceryapp.models.Item
 
 
-class MyListAdapter(val items: List<FoodItems>): RecyclerView.Adapter<MyListAdapter.ViewHolder>() {
+class MyListAdapter(val items: List<Item>): RecyclerView.Adapter<MyListAdapter.ViewHolder>() {
     class ViewHolder(val binding: MyListListItemBinding): RecyclerView.ViewHolder(binding.root)
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {

@@ -13,15 +13,15 @@ object ItemRepository {
         ).build()
     }
 
-    suspend fun createItem(item: Item) {
-        db.getListDao().createItem(item)
+    suspend fun createItem(item: Item): Long {
+        return db.getListDao().createItem(item)
     }
 
     suspend fun getAllItems(): List<Item> {
-        return listOf()
+        return db.getListDao().getAllItems()
     }
 
-    suspend fun toggleCompletion(item: Item) {
-
+    suspend fun update(item: Item) {
+        db.getListDao().updateItem(item)
     }
 }

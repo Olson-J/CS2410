@@ -60,7 +60,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/ItemNamePrompt"
+        android:id="@+id/ItemCreationPrompt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -91,7 +91,7 @@
         android:hint="Item Name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ItemNamePrompt" />
+        app:layout_constraintTop_toBottomOf="@+id/ItemCreationPrompt" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"

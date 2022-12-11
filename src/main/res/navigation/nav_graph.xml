@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/selectList">
+    app:startDestination="@id/addItem">
 
     <fragment
         android:id="@+id/selectList"
@@ -11,32 +11,11 @@
         android:label="fragment_select_list"
         tools:layout="@layout/fragment_select_list" >
         <action
-            android:id="@+id/select_list_to_my_list"
-            app:destination="@id/myList" />
-        <action
-            android:id="@+id/select_list_to_add_list"
-            app:destination="@id/addList" />
-        <action
             android:id="@+id/select_list_to_add_item"
             app:destination="@id/addItem" />
         <action
             android:id="@+id/select_list_to_browse_catalogue"
             app:destination="@id/browseCatalogue" />
-    </fragment>
-    <fragment
-        android:id="@+id/myList"
-        android:name="com.a02363064.groceryapp.MyList"
-        android:label="fragment_my_list"
-        tools:layout="@layout/fragment_my_list" >
-        <action
-            android:id="@+id/my_list_to_select_list"
-            app:destination="@id/selectList" />
-        <action
-            android:id="@+id/my_list_to_view_catalogue"
-            app:destination="@id/browseCatalogue" />
-        <action
-            android:id="@+id/my_list_to_add_item"
-            app:destination="@id/addItem" />
     </fragment>
     <fragment
         android:id="@+id/browseCatalogue"
@@ -60,21 +39,6 @@
             app:destination="@id/selectList" />
         <action
             android:id="@+id/add_item_to_browse_catalogue"
-            app:destination="@id/browseCatalogue" />
-    </fragment>
-    <fragment
-        android:id="@+id/addList"
-        android:name="com.a02363064.groceryapp.AddList"
-        android:label="fragment_add_list"
-        tools:layout="@layout/fragment_add_list" >
-        <action
-            android:id="@+id/add_list_to_select_list"
-            app:destination="@id/selectList" />
-        <action
-            android:id="@+id/add_list_to_add_item"
-            app:destination="@id/addItem" />
-        <action
-            android:id="@+id/add_list_to_browse_catalogue"
             app:destination="@id/browseCatalogue" />
     </fragment>
 </navigation>

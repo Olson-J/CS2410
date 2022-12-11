@@ -13,13 +13,13 @@ interface ListDao {
     @Query("SELECT * FROM item")
     suspend fun getAllItems(): List<Item>
 
-    // create one item at a time
+    // create one item at a time, return name/ID
     @Insert
-    suspend fun createItem(item: Item)
+    suspend fun createItem(item: Item): Long
 
-    // create multiple items at a time, pass in as args
-    @Insert
-    suspend fun createMany(vararg items: List<Item>)
+//    // create multiple items at a time, pass in as args
+//    @Insert
+//    suspend fun createMany(vararg items: List<Item>)
 
     // update an item
     @Update

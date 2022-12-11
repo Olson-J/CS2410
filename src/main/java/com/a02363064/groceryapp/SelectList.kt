@@ -26,20 +26,14 @@ class SelectList : Fragment() {
         binding.addItemButton.setOnClickListener{
             findNavController().navigate(R.id.select_list_to_add_item)
         }
-        // select list to add list
-        binding.newListButton.setOnClickListener{
-            findNavController().navigate(R.id.select_list_to_add_list)
-        }
+//
+//        val shoppingLists = arrayOf<String>("My list", "My Second List", "My Third List")
+//        val listOfLists = (shoppingLists.indices).map {
+//            ShoppingLists(shoppingLists[it])
+//        }.toList()
 
-        // choose a list
-
-
-        val shoppingLists = arrayOf<String>("My list", "My Second List", "My Third List")
-        val listOfLists = (shoppingLists.indices).map {
-            ShoppingLists(shoppingLists[it])
-        }.toList()
-
-        binding.SelectListRecyclerView.adapter = SelectListAdapter(listOfLists)
+        val viewModel = ItemViewModel()
+        binding.SelectListRecyclerView.adapter = SelectListAdapter(viewModel.items) {}
         binding.SelectListRecyclerView.layoutManager = LinearLayoutManager(this.context)
         return binding.root
     }

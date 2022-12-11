@@ -11,10 +11,13 @@ import com.a02363064.groceryapp.databinding.FragmentAddItemBinding
 
 class AddItem : Fragment() {
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val binding = FragmentAddItemBinding.inflate(inflater, container, false)
+
+        val viewModel = ItemCreationViewModel()
 
         // button from add item to browse
         binding.browseButtonOnAddListTab.setOnClickListener{
@@ -28,7 +31,8 @@ class AddItem : Fragment() {
 
         // button to add item to inventory
         binding.AddItemButton.setOnClickListener{
-            //idk yet
+            viewModel.createItem(binding.addItemNameTextBox.text.toString(),
+                binding.addItemAisleTextBox.text.toString(), binding.addItemPriceTextBox.text.toString())
         }
 
         return binding.root
